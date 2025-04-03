@@ -1,0 +1,36 @@
+.heroSection {
+  width: 100%;
+  height: 396px;
+  background-color: #fff;
+  border-radius: 24px;
+  box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.1);
+  padding: 48px;
+  display: flex;
+  gap: 32px;
+}
+
+.heroImage {
+  width: 212px;
+  height: 300px;
+}
+
+.contentContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.title {
+  font-size: 40px;
+  font-weight: bold;
+  color: #2ca58d;
+  line-height: 48px;
+  max-width: 590px;
+}
+
+.description {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.6;
+  max-width: 800px;
+}

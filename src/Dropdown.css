@@ -1,0 +1,26 @@
+.dropdown-container {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown {
+    width: 200px;  /* Adjust width as needed */
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: white;
+    cursor: pointer;
+  }
+  
+  /* Style dropdown options */
+  .dropdown option {
+    font-size: 16px;
+    padding: 8px;
+  }
+  
+  /* Ensure a scrollbar appears if too many options */
+  .dropdown:focus {
+    outline: none;
+  }
+  

@@ -1,0 +1,150 @@
+.mainContainer {
+    min-height: 100vh;
+    width: 100%;
+    background-color: #f8f9fa;
+    font-family: "Roboto", sans-serif;
+    padding: 60px;
+  }
+  
+  .contentWrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* Intro Section */
+  .introSection {
+    margin-bottom: 40px;
+  }
+  
+  .mainTitle {
+    font-size: 32px;
+    font-weight: bold;
+    color: #2ca58d;
+    margin-bottom: 25px;
+  }
+  
+  .introText {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 30px;
+  }
+  
+  /* Team Overview */
+  .teamOverview {
+    margin-bottom: 60px;
+  }
+  
+  .teamImageContainer {
+    width: 100%;
+    height: 400px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin-bottom: 60px;
+  }
+  
+  .teamImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .teamTitle {
+    font-size: 28px;
+    font-weight: bold;
+    color: #2ca58d;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  
+  .teamSubtitle {
+    font-size: 16px;
+    color: #666;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  /* Team Grid */
+  .teamGrid {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+  
+  .featuredMember {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .memberRow {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  /* Member Card */
+  .memberCard {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 368px;
+  }
+  
+  .memberImage {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+  }
+  
+  .memberName {
+    font-size: 20px;
+    font-weight: bold;
+    color: #2ca58d;
+    margin-bottom: 8px;
+  }
+  
+  .memberRole {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 15px;
+  }
+  
+  .memberDescription {
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+    line-height: 1.4;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 1024px) {
+    .teamGrid {
+      gap: 24px;
+    }
+  
+    .memberRow {
+      flex-direction: column;
+      gap: 24px;
+    }
+  
+    .memberCard {
+      margin: 0 auto;
+    }
+  }
+  
+  @media (max-width: 640px) {
+    .featuredMember {
+      justify-content: center;
+    }
+  
+    .memberCard {
+      width: 100%;
+      max-width: 368px;
+    }
+  }
+  

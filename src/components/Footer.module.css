@@ -1,0 +1,124 @@
+.footer {
+  width: 100%;
+  background: #2ca58d;
+  margin-top: 48px;
+  padding: 32px;
+  color: #fff;
+}
+
+.footerContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.brandSection {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.brandWrapper {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.brandLogo {
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+}
+
+.brandName {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.contactSection {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.contactInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.contactLabel {
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.contactText {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.9);
+  font-style: normal;
+}
+
+.mapContainer {
+  width: 100%;
+  height: 120px;
+  background: #fff;
+  border-radius: 8px;
+  margin-top: 8px;
+}
+
+.map {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  border: none;
+}
+
+.quickLinks {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.quickLinksTitle {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.linksList {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.link {
+  font-size: 14px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.socialLinks {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.socialLink {
+  width: 40px;
+  height: 40px;
+  background: #259077;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s;
+}
+
+.socialIcon {
+  width: 20px;
+  height: 20px;
+}

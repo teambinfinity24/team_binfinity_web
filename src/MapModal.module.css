@@ -1,0 +1,227 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.container {
+  width: 95%;
+  max-width: 1400px;
+  height: 90vh;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #2ca58d;
+}
+
+.closeButton {
+  font-size: 32px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0 10px;
+}
+
+.mainContent {
+  display: flex;
+  flex: 1;
+  gap: 20px;
+  padding: 0 20px 20px;
+  height: calc(100% - 80px);
+}
+
+.mapSection {
+  flex: 1;
+  position: relative;
+  min-height: 500px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.mapContainer {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.mapFrame {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.alertSection {
+  width: 300px;
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.alertTitle {
+  font-size: 18px;
+  font-weight: bold;
+  color: #2ca58d;
+  margin-bottom: 20px;
+}
+
+.alertList {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.alertItem {
+  background: #f5f5f5;
+  border-radius: 8px;
+  padding: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.alertItem:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.selectedAlert {
+  border: 2px solid #2ca58d;
+  background: #f0f9f6;
+}
+
+.alertHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.binName {
+  font-weight: bold;
+  color: #333;
+}
+
+.alertStatus {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.alertBar {
+  height: 8px;
+  background: #e0e0e0;
+  border-radius: 4px;
+  overflow: hidden;
+  margin: 8px 0;
+}
+
+.alertBarFill {
+  height: 100%;
+  transition: width 0.3s ease;
+}
+
+.alertLevel {
+  font-size: 14px;
+  color: #666;
+}
+
+.binMarkerContainer {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+.binMarker {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.binMarker:hover {
+  transform: scale(1.1);
+}
+
+.markerLabel {
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.tooltip {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  white-space: nowrap;
+  font-size: 14px;
+  color: #333;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 20;
+  margin-bottom: 8px;
+}
+
+.binMarkerContainer:hover .tooltip {
+  opacity: 1;
+  visibility: visible;
+}
+
+.selected .binMarker {
+  transform: scale(1.1);
+  box-shadow: 0 0 0 4px rgba(44, 165, 141, 0.3);
+}
+
+@media (max-width: 768px) {
+  .mainContent {
+    flex-direction: column;
+  }
+
+  .alertSection {
+    width: 100%;
+  }
+
+  .mapSection {
+    min-height: 400px;
+  }
+}
