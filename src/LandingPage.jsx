@@ -15,9 +15,25 @@ const LandingPage = ({ contactRef }) => {
   const [showMap, setShowMap] = useState(false);
   const [isAuthOpen, setIsAuthOpen] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [showMapButton, setShowMapButton] = useState(false);
 
   const toggleDark = () => setIsDark(!isDark);
-  const handleLogout = () => setIsLoggedIn(false);
+
+  const handleMapClick = () => {
+    setShowMap(true); // open map when view map is clicked
+  };
+
+  const handleCloseMap = () => {
+    setShowMap(false);
+    // After map is closed, show navigation buttons
+    setIsLoggedIn(true);
+    setShowMapButton(true);
+  };
+
+  const handleLogout = () => {
+    setIsLoggedIn(false);
+    setShowMapButton(false);
+  };
 
   return (
     <div className={`${styles.container} ${isDark ? styles.darkMode : ""}`}>
@@ -26,9 +42,10 @@ const LandingPage = ({ contactRef }) => {
         toggleDark={toggleDark}
         isLoggedIn={isLoggedIn}
         onAuthClick={() => setIsAuthOpen(true)}
-        onMapClick={() => setShowMap(true)}
+        onMapClick={handleMapClick}
         onLogout={handleLogout}
         contactRef={contactRef}
+        showMapButton={showMapButton}
       />
 
       <main className={styles.main}>
@@ -47,12 +64,25 @@ const LandingPage = ({ contactRef }) => {
 
       <Footer isDark={isDark} />
 
-      {showMap && <MapModal isDark={isDark} onClose={() => setShowMap(false)} />}
+      {/* ✅ Show MapModal only when triggered */}
+      {showMap && (
+        <MapModal
+          isDark={isDark}
+          onClose={handleCloseMap}
+          updateNavigation={() => {}} // not needed anymore
+          showMap={showMap}
+        />
+      )}
+
+      {/* ✅ Auth Modal triggers map on login */}
       {isAuthOpen && (
         <AuthModal
           isDark={isDark}
           onClose={() => setIsAuthOpen(false)}
-          onLogin={() => setIsLoggedIn(true)}
+          onLogin={() => {
+            setIsAuthOpen(false);
+            setShowMap(true);
+          }}
         />
       )}
     </div>

@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+
 import styles from "./MapModal.module.css";
 
 const defaultBins = [
@@ -53,22 +54,22 @@ const getAlertStatus = (level) => {
   return "Normal";
 };
 
-const MapModal = ({ isDark, onClose, updateNavigation }) => {
+const MapModal = ({ isDark, onClose, updateNavigation, showMap }) => {
   const [bins] = useState(defaultBins);
   const [selectedBin, setSelectedBin] = useState(null);
 
   const handleClose = () => {
     if (updateNavigation) {
-      updateNavigation(true);
+      updateNavigation();  // ✅ Call the function safely
     }
-    if (onClose) {
-      onClose();
-    }
+    onClose();
   };
 
   const handleBinClick = (bin) => {
     setSelectedBin(bin.id === selectedBin?.id ? null : bin);
   };
+
+  if (!showMap) return null;
 
   return (
     <div className={styles.overlay}>
@@ -85,7 +86,7 @@ const MapModal = ({ isDark, onClose, updateNavigation }) => {
               style={{ color: isDark ? "#E0E0E0" : "#666666" }}
               aria-label="Close map view"
             >
-              ×
+              X
             </button>
           </header>
 

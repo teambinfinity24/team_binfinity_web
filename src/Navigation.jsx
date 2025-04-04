@@ -11,7 +11,7 @@ const Navigation = ({
   onMapClick,
   onLogout,
   contactRef,
-  showMapButton,
+  showMapButton, // 👈 coming from parent
   userEmail = "user@example.com",
 }) => {
   const [isProfileOpen, setIsProfileOpen] = useState(false);
@@ -39,6 +39,7 @@ const Navigation = ({
       style={{ backgroundColor: isDark ? "#1F2937" : "#2CA58D" }}
     >
       <div className={styles.container}>
+        {/* Logo */}
         <div className={styles.logoContainer}>
           <img
             src="./67eed00796736_download-removebg-preview.png"
@@ -48,6 +49,7 @@ const Navigation = ({
           <span className={styles.brand}>Binfinity</span>
         </div>
 
+        {/* Theme toggle */}
         <div className={styles.themeToggle}>
           <button
             onClick={toggleDark}
@@ -58,18 +60,20 @@ const Navigation = ({
           </button>
         </div>
 
+        {/* Links */}
         <div className={styles.links}>
           <span className={styles.link}>Home</span>
           <span className={styles.link}>
-  <Link to="/About" style={{ textDecoration: "none", color: "inherit" }}>
-    About Us
-  </Link>
-</span>
+            <Link to="/About" style={{ textDecoration: "none", color: "inherit" }}>
+              About Us
+            </Link>
+          </span>
 
           <span onClick={handleScrollToContact} className={styles.link}>
             Contact Us
           </span>
 
+          {/* View Map button shown conditionally */}
           {showMapButton && (
             <button
               onClick={onMapClick}
@@ -80,6 +84,7 @@ const Navigation = ({
             </button>
           )}
 
+          {/* Profile dropdown if logged in */}
           {isLoggedIn ? (
             <div className={styles.profileContainer} ref={profileRef}>
               <button
@@ -88,7 +93,7 @@ const Navigation = ({
                 aria-label="Profile menu"
               >
                 <img
-                  src="/profile-icon.png"
+                  src="./6522516__2_-removebg-preview.png"
                   alt="Profile"
                   className={styles.profileImage}
                 />
