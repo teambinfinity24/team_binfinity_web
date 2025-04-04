@@ -8,7 +8,7 @@ const App = () => {
   const contactRef = useRef(null);
 
   return (
-    <Router>
+    <Router basename="/team_binfinity_web">
       <Routes>
         <Route path="/" element={<LandingPage contactRef={contactRef} />} />
         <Route path="/About" element={<About />} />
