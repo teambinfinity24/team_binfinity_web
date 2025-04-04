@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
 
-  "App": "https://teambinfinity24.github.io/team_binfinity_web",
+  "Landingpage": "https://teambinfinity24.github.io/team_binfinity_web",
   "dependencies": {
     "@react-google-maps/api": "^2.20.6",
     "@testing-library/dom": "^10.4.0",
